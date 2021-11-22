@@ -34,10 +34,14 @@ class Example(QMainWindow, Ui_MainWindow):
             qp.end()
 
     def draw_ellipse(self, qp):
-        begin = random.randint(0, 600)
-        side = random.randint(0, 600 - begin)
-        qp.setPen(QColor(255, 255, 0))
-        qp.drawEllipse(side, side, side, side)
+        red = random.randint(0, 255)
+        green = random.randint(0, 255)
+        blue = random.randint(0, 255)
+        begin_x = random.randint(0, 600)
+        begin_y = random.randint(0, 600)
+        side_x = random.randint(0, 600 - begin_x)
+        qp.setPen(QColor(red, green, blue))
+        qp.drawEllipse(begin_x, begin_y, side_x, side_x)
         self.do_paint = False
 
 def except_hook(cls, exception, traceback):
